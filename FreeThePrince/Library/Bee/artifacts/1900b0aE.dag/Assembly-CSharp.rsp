@@ -320,6 +320,7 @@
 "Assets/Interfaces/IInteractable.cs"
 "Assets/ManagerScripts/SpawnManager.cs"
 "Assets/PlayerScripts/Dash.cs"
+"Assets/PlayerScripts/InteractionCheck.cs"
 "Assets/PlayerScripts/PlayerAnimations.cs"
 "Assets/PlayerScripts/PlayerMovement.cs"
 "Assets/ScriptableObjects/Stats.cs"

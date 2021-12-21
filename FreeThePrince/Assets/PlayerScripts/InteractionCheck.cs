@@ -15,7 +15,7 @@ public class InteractionCheck : MonoBehaviour
     }
     void CheckForInteractables()
     {
-        ray = new Ray(playerTransform.position,playerTransform.forward);
+        ray = new Ray(playerTransform.position,playerTransform.forward * checkLength);
         if (Physics.Raycast(ray, out hitInfo,checkLength,interactableLayer) && Input.GetKeyDown(KeyCode.E))
         {
             IInteractable interactableObject = hitInfo.collider.gameObject.GetComponent<IInteractable>();

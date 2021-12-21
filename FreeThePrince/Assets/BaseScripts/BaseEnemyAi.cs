@@ -40,10 +40,10 @@ public class BaseEnemyAi : MonoBehaviour
     {
         float randomZ = Random.Range(-walkingRange, walkingRange);
         float randomX = Random.Range(-walkingRange, walkingRange);
-        enemyWalkPoint = new Vector3(randomX, 0, randomZ);
+        enemyWalkPoint = enemyTransform.position + new Vector3(randomX, 0, randomZ);
         Debug.DrawRay(transform.position, Vector3.down, Color.blue);
-
-        if (Physics.Raycast(enemyWalkPoint, -enemyTransform.up, 1f, groundLayer))
+        Debug.Log(enemyWalkPoint + enemyTransform.position);
+        if (Physics.Raycast( enemyWalkPoint, -enemyTransform.up, 1f, groundLayer))
         {
             Debug.Log(Physics.Raycast(enemyWalkPoint, -enemyTransform.up, 1f, groundLayer));
             Debug.Log("HISET");
@@ -59,7 +59,7 @@ public class BaseEnemyAi : MonoBehaviour
         {
             enemyAgent.SetDestination(enemyWalkPoint);
         }
-        distanceToWalkPoint = enemyWalkPoint - enemyTransform.position;
+        distanceToWalkPoint =  enemyWalkPoint - enemyTransform.position;
 
         if (distanceToWalkPoint.magnitude <= 1f)
         {

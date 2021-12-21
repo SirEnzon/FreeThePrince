@@ -29,7 +29,7 @@ public class Dash : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift) && dashCD <= 0)
         {
             StartCoroutine(DashInvincibility(1));
-            dashCD = 2;
+            dashCD = 1;
             playerRb.AddForce(playerTransform.forward * dashForce, ForceMode.Impulse);
         }
     }
