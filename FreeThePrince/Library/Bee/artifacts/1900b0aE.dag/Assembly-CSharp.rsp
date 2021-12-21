@@ -314,6 +314,8 @@
 "Assets/BaseScripts/BaseStats.cs"
 "Assets/CameraScripts/CameraFollow.cs"
 "Assets/EnemyScripts/RangedEnemy.cs"
+"Assets/EnvironmentScripts/Lever.cs"
+"Assets/EnvironmentScripts/RoomDoor.cs"
 "Assets/Interfaces/IDamageAble.cs"
 "Assets/Interfaces/IInteractable.cs"
 "Assets/ManagerScripts/SpawnManager.cs"
