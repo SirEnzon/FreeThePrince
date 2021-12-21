@@ -5,7 +5,8 @@ using UnityEngine;
 public class BaseStats : MonoBehaviour,IDamageAble
 {
     [SerializeField] Stats stats;
-    float health;
+    [SerializeField] float health;
+    public float Health { get { return health; } set { health = value; } }
     float speed;
     public float Speed { get { return speed; } }
     float dmg;
@@ -14,11 +15,11 @@ public class BaseStats : MonoBehaviour,IDamageAble
     public bool IsInvincible { get { return isInvincible; } set { isInvincible = value; } }
     float baseArmor;
     // Start is called before the first frame update
-    protected void Start()
+    protected void Awake()
     {
-        SetPlayerStats();
+        SetStats();
     }
-    protected void SetPlayerStats()
+    protected void SetStats()
     {
         health = stats.BaseHealth;
         speed = stats.BaseSpeed;

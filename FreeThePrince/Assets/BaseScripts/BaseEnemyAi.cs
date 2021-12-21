@@ -88,7 +88,7 @@ public class BaseEnemyAi : MonoBehaviour
             Collider[] attackableTargets = Physics.OverlapSphere(enemyAttackCheck.position, attackcheckRadius, playerLayer);
             foreach (Collider attackableTarget in attackableTargets)
             {
-                attackableTarget.GetComponent<IDamageAble>().TakeDmg(GetComponent<BaseStats>().Dmg);
+                attackableTarget.gameObject.GetComponent<IDamageAble>().TakeDmg(GetComponent<BaseStats>().Dmg);
             }
         }
     }
