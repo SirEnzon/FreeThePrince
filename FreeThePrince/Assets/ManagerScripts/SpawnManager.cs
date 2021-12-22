@@ -20,7 +20,7 @@ public class SpawnManager : MonoBehaviour
     {
         for (int i = 0; i < numberOfProjectiles; i++)
         {
-            Instantiate(projectile, spawnPos.position, Quaternion.identity);
+            Instantiate(projectile, spawnPos.position, spawnPos.rotation);
             yield return new WaitForSeconds(delayBetweenShots);
         }
     }

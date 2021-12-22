@@ -12,7 +12,6 @@ public class PlayerUi : MonoBehaviour
     void Start()
     {
         playerHealth = player.GetComponent<BaseStats>();
-        Debug.Log(player.GetComponent<BaseStats>().Health);
         SetHealthBarBaseStats();
     }
 

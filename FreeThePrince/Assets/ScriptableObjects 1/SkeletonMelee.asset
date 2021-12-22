@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseHealth: 5
   baseDmg: 2
-  baseArmor: 3
+  baseArmor: 2
   baseSpeed: 3

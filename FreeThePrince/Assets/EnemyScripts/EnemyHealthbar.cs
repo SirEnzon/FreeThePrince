@@ -10,14 +10,11 @@ public class EnemyHealthbar : MonoBehaviour
     private void Start()
     {
         maxEnemyHp = GetComponent<BaseStats>().Health;
-        Debug.Log(maxEnemyHp);
     }
     // Start is called before the first frame update
     void Update()
     {
         UpdateHealthBar();
-        Debug.Log(GetComponent<BaseStats>().Health);
-        Debug.Log(maxEnemyHp);
     }
     void UpdateHealthBar()
     {

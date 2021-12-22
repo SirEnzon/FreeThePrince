@@ -13,11 +13,17 @@ public class BaseStats : MonoBehaviour,IDamageAble
     public float Dmg { get { return dmg; } }
     bool isInvincible;
     public bool IsInvincible { get { return isInvincible; } set { isInvincible = value; } }
+    static bool thisIsDead;
+    static public bool ThisIsDead { get { return thisIsDead; } set { thisIsDead = value; } }
     float baseArmor;
     // Start is called before the first frame update
     protected void Awake()
     {
         SetStats();
+    }
+    protected void Update()
+    {
+        CheckIfThisIsDead();
     }
     protected void SetStats()
     {
@@ -35,5 +41,13 @@ public class BaseStats : MonoBehaviour,IDamageAble
         }
        
     }
+    void CheckIfThisIsDead()
+    {
+        if(health < 0)
+        {
+            GetComponent<IOnDie>().OnDeath();
+        }
+    }
+
 
 }

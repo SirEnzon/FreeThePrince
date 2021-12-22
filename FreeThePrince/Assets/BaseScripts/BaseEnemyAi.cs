@@ -42,11 +42,9 @@ public class BaseEnemyAi : MonoBehaviour
         float randomX = Random.Range(-walkingRange, walkingRange);
         enemyWalkPoint = enemyTransform.position + new Vector3(randomX, 0, randomZ);
         Debug.DrawRay(transform.position, Vector3.down, Color.blue);
-        Debug.Log(enemyWalkPoint + enemyTransform.position);
         if (Physics.Raycast( enemyWalkPoint, -enemyTransform.up, 1f, groundLayer))
         {
             Debug.Log(Physics.Raycast(enemyWalkPoint, -enemyTransform.up, 1f, groundLayer));
-            Debug.Log("HISET");
             walkPointSet = true;
         }
 

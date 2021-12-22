@@ -11,15 +11,16 @@ public class RangedEnemy : BaseEnemyAi
     {
         base.Update();
         CheckIfCanattack();
-        Debug.Log(attackCd);
+
     }
     protected override void EnemyAttack()
     {
         attackCd -= Time.deltaTime;
         if(attackCd <= 0 )
         {
-            Debug.Log (attackCd);
-            SpawnManager.instance.SpawnProjectiles(0.2f, 2, enemyProjectile, spawnPosition);
+            GameObject go = enemyProjectile;
+            SpawnManager.instance.SpawnProjectiles(1f, 1, go, spawnPosition);
+            go.transform.forward = spawnPosition.forward;
             attackCd = 2;
         }
         
@@ -28,13 +29,10 @@ public class RangedEnemy : BaseEnemyAi
     {
         if (playerIsInAttackRange && playerIsInSightRange)
         {
-            Debug.Log("ATTACK");
+            enemyTransform.LookAt(playerTransform.position);
             this.EnemyAttack();
         }  
     }
-    protected override IEnumerator AttackDelay(float attackCd)
-    {
-        yield return null;
-    }
+    
     
 }
