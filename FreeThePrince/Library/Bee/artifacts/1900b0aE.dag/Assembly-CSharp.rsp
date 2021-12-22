@@ -314,6 +314,7 @@
 "Assets/BaseScripts/BaseEnemyAi.cs"
 "Assets/BaseScripts/BaseStats.cs"
 "Assets/BaseScripts/Projectile.cs"
+"Assets/BaseScripts/Trap.cs"
 "Assets/CameraScripts/CameraFollow.cs"
 "Assets/EnemyScripts/EnemyHealthbar.cs"
 "Assets/EnemyScripts/RangedEnemy.cs"
@@ -330,6 +331,8 @@
 "Assets/PlayerScripts/PlayerAnimations.cs"
 "Assets/PlayerScripts/PlayerMovement.cs"
 "Assets/ScriptableObjects/Stats.cs"
+"Assets/Traps/SpikeTrap.cs"
+"Assets/Traps/SpikeTrapDamage.cs"
 -langversion:8.0
 
 /deterministic
