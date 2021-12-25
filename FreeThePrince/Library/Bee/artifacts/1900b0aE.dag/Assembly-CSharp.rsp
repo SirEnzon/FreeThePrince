@@ -330,6 +330,8 @@
 "Assets/Scripts/BaseScripts/Trap.cs"
 "Assets/Scripts/CameraScripts/CameraFollow.cs"
 "Assets/Scripts/EnemyScripts/EnemyHealthbar.cs"
+"Assets/Scripts/EnemyScripts/Fire.cs"
+"Assets/Scripts/EnemyScripts/MageSkeleton.cs"
 "Assets/Scripts/EnemyScripts/RangedEnemy.cs"
 "Assets/Scripts/EnvironmentScripts/DoorWithRoomFadeIn.cs"
 "Assets/Scripts/EnvironmentScripts/Lever.cs"
@@ -344,6 +346,7 @@
 "Assets/Scripts/PlayerScripts/InteractionCheck.cs"
 "Assets/Scripts/PlayerScripts/PlayerAnimations.cs"
 "Assets/Scripts/PlayerScripts/PlayerMovement.cs"
+"Assets/Scripts/Traps/FireTrap.cs"
 "Assets/Scripts/Traps/SpikeTrap.cs"
 "Assets/Scripts/Traps/SpikeTrapDamage.cs"
 -langversion:8.0

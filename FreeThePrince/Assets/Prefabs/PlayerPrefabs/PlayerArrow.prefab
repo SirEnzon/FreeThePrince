@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 664080799727855637}
   m_Layer: 0
   m_Name: PlayerArrow
-  m_TagString: PlayerProjectiel
+  m_TagString: PlayerProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +105,7 @@ Transform:
   m_GameObject: {fileID: 751822371796715710}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.577686, y: 0.93979, z: 1.265}
   m_Children: []
   m_Father: {fileID: 751822371029497209}
   m_RootOrder: 0
@@ -138,7 +138,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 03e10cd86a7366a47b78f1b0cf136ca4, type: 2}
+  - {fileID: 2100000, guid: f03a28e6903f96244bc5aae8850606b3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
