@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 6141983966585724689}
   - component: {fileID: 6141983966585724690}
   - component: {fileID: 6141983966585724691}
-  - component: {fileID: 6141983966585724695}
+  - component: {fileID: 5729962754570450750}
   - component: {fileID: 3668112718062009337}
   - component: {fileID: 6141983966585724700}
   - component: {fileID: 6141983966585724694}
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5d1a1d9295ac2f4f85da60d89d3e3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6141983966585724695
+--- !u!114 &5729962754570450750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,11 +201,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6141983966585724703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 815ff541e20f1fc4f90b889bace86027, type: 3}
+  m_Script: {fileID: 11500000, guid: 16db42eca29c7b641b60a67705de4331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: af896929f692a3c44b49d1d3ce919819, type: 2}
   health: 0
+  stamina: 300
 --- !u!114 &3668112718062009337
 MonoBehaviour:
   m_ObjectHideFlags: 0

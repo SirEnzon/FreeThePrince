@@ -346,6 +346,7 @@
 "Assets/Scripts/PlayerScripts/InteractionCheck.cs"
 "Assets/Scripts/PlayerScripts/PlayerAnimations.cs"
 "Assets/Scripts/PlayerScripts/PlayerMovement.cs"
+"Assets/Scripts/PlayerScripts/SpecialPlayerStats.cs"
 "Assets/Scripts/Traps/FireTrap.cs"
 "Assets/Scripts/Traps/SpikeTrap.cs"
 "Assets/Scripts/Traps/SpikeTrapDamage.cs"
