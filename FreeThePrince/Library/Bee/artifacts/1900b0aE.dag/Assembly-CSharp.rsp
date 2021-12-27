@@ -327,6 +327,7 @@
 "Assets/Scripts/BaseScripts/BaseEnemyAi.cs"
 "Assets/Scripts/BaseScripts/BaseStats.cs"
 "Assets/Scripts/BaseScripts/Projectile.cs"
+"Assets/Scripts/BaseScripts/StatusEffects.cs"
 "Assets/Scripts/BaseScripts/Trap.cs"
 "Assets/Scripts/CameraScripts/CameraFollow.cs"
 "Assets/Scripts/EnemyScripts/EnemyHealthbar.cs"

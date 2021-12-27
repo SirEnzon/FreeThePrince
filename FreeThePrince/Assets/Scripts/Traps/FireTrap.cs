@@ -40,7 +40,7 @@ public class FireTrap : Trap
     {
         if(other.GetComponent<IDamageAble>() != null)
         {
-            other.GetComponent<IDamageAble>().TakeDmg(trapDmg);
+            other.GetComponent<StatusEffects>().TriggerEffect(3, StatusEffects.EnumStatusEffects.burning);
         }
     }
 }

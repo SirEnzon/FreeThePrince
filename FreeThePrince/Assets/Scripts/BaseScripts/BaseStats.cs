@@ -8,7 +8,7 @@ public class BaseStats : MonoBehaviour,IDamageAble
     [SerializeField] float health;
     public float Health { get { return health; } set { health = value; } }
     float speed;
-    public float Speed { get { return speed; } }
+    public float Speed { get { return speed; }set{ speed = value; } }
     float dmg;
     public float Dmg { get { return dmg; } }
     bool isInvincible;
