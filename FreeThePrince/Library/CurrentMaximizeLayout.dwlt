@@ -23,10 +23,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 939
-  m_MinSize: {x: 908, y: 442}
-  m_MaxSize: {x: 22003, y: 10021}
+  m_MinSize: {x: 911, y: 421}
+  m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 131
+  controlID: 5688
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -137,10 +137,10 @@ MonoBehaviour:
     y: 0
     width: 1185
     height: 939
-  m_MinSize: {x: 201, y: 442}
-  m_MaxSize: {x: 4001, y: 8042}
+  m_MinSize: {x: 201, y: 421}
+  m_MaxSize: {x: 4001, y: 8021}
   vertical: 1
-  controlID: 132
+  controlID: 5608
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_ShowContextualTools: 0
   m_WindowGUID: 710109eae9939244caf4784376358c3c
   m_Gizmos: 1
-  m_OverrideSceneCullingMask: 4611686018427387905
+  m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 0
@@ -204,9 +204,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 21.22357, y: 13.283216, z: -40.754673}
+    m_Target: {x: 0.016554054, y: 8.75664, z: -39.774036}
     speed: 2
-    m_Value: {x: 21.22357, y: 13.283216, z: -40.754673}
+    m_Value: {x: 0.016554054, y: 8.75664, z: -39.774036}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -253,13 +253,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.17252159, y: -0.76259506, z: 0.22014378, w: -0.58119726}
+    m_Target: {x: 0.29097134, y: -0.018338317, z: 0.010966138, w: 0.9551525}
     speed: 2
-    m_Value: {x: -0.17273173, y: -0.76352394, z: 0.22041191, w: -0.5819052}
+    m_Value: {x: 0.2913449, y: -0.01836186, z: 0.010980217, w: 0.9563788}
   m_Size:
-    m_Target: 5.4330277
+    m_Target: 38.680798
     speed: 2
-    m_Value: 5.4330277
+    m_Value: 38.680798
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -2357,8 +2357,8 @@ MonoBehaviour:
     y: 0
     width: 232
     height: 939
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 9}
   m_Panes:
   - {fileID: 9}
@@ -2402,22 +2402,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/PlayerScripts
+    - Assets/Scripts/BaseScripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/PlayerScripts
+  - Assets/Scripts/BaseScripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\enzom\Desktop\FreeThePrinceGitClone\FreeThePrince\FreeThePrince
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 88590000
-    m_LastClickedID: 22920
-    m_ExpandedIDs: 00000000d8570000da570000765900008059000000ca9a3b
+    m_SelectedIDs: 4a590000
+    m_LastClickedID: 22858
+    m_ExpandedIDs: 00000000a4570000a6570000a857000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2445,7 +2445,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d8570000da570000
+    m_ExpandedIDs: 00000000a4570000a6570000a857000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2470,9 +2470,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 82610000
-    m_LastClickedInstanceID: 24962
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: fc520000
+    m_LastClickedInstanceID: 21244
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -2559,7 +2559,7 @@ MonoBehaviour:
     m_CachedPref: -599
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 24962
+  m_LastInspectedObjectInstanceID: 21244
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
@@ -2647,7 +2647,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 86c0ffff82610000
+      m_ExpandedIDs: 54fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

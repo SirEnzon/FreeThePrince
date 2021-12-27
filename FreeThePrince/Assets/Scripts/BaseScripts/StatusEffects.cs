@@ -21,29 +21,32 @@ public class StatusEffects : MonoBehaviour
 
     public void TriggerEffect(float statusEffectTime,EnumStatusEffects statusEffect)
     {
-        switch (statusEffect)
-        {
-            case EnumStatusEffects.burning:
-                if (currentStatusEffect == null)
-                {
-                    currentStatusEffect = StartCoroutine(BurnDamageApply(statusEffectTime));
-                }
-                break;
-            case EnumStatusEffects.poisened:
-                if (currentStatusEffect == null)
-                {
-                    currentStatusEffect = StartCoroutine(PoisonDmg(statusEffectTime,0.5f));
+      
+            switch (statusEffect)
+            {
+                case EnumStatusEffects.burning:
+                    if (currentStatusEffect == null)
+                    {
+                        currentStatusEffect = StartCoroutine(BurnDamageApply(statusEffectTime));
+                    }
+                    break;
+                case EnumStatusEffects.poisened:
+                    if (currentStatusEffect == null)
+                    {
+                        currentStatusEffect = StartCoroutine(PoisonDmg(statusEffectTime, 0.5f));
 
-                }
-                break;
+                    }
+                    break;
                 case EnumStatusEffects.slowed:
-                if (currentStatusEffect == null)
-                {
-                    currentStatusEffect = StartCoroutine(SlowApply(3, 3));
-                }
-                break;
+                    if (currentStatusEffect == null)
+                    {
+                        currentStatusEffect = StartCoroutine(SlowApply(3, 3));
+                    }
+                    break;
 
+            
         }
+       
         
     }
     IEnumerator BurnDamageApply(float effectTime)
