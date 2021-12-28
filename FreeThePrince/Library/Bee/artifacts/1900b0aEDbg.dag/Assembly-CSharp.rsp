@@ -323,6 +323,7 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 "Assets/ScriptableObjects/Stats.cs"
+"Assets/Scripts/AbilitiesScripts/SpecialArrowShot.cs"
 "Assets/Scripts/BaseScripts/Ability.cs"
 "Assets/Scripts/BaseScripts/BaseDeath.cs"
 "Assets/Scripts/BaseScripts/BaseEnemyAi.cs"

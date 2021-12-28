@@ -7,9 +7,12 @@ public class Bow : MonoBehaviour
 {
     [Header("Prefab")]
     [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private Transform spawnPoint;
+    [SerializeField] private Transform leftSpawnPoint;
+    [SerializeField] private Transform centerSpawnPoint;
+    [SerializeField] private Transform rightSpawnPoint;
     [SerializeField] private string fireButton;
-    // [SerializeField] private float prefabImpulse = 100f;
+    [SerializeField] private string secondaryFireButton = "Fire2";
+
 
 
     [Header("Cooldown")]
@@ -19,6 +22,26 @@ public class Bow : MonoBehaviour
     [Header("Fire Direction - Camera")]
     [SerializeField] private Camera cam;
     [SerializeField] private LayerMask layerMask;
+
+    // Abilities 
+    private Abilities abilities;
+    private List<Ability> playerAbilityList;
+    private SpecialArrowShot secondaryFireMode;
+
+    private void Start()
+    {
+        abilities = gameObject.GetComponentInParent<Abilities>();
+        playerAbilityList = abilities.GetAllPlayerAbilities();
+        if (playerAbilityList != null)
+        {
+            secondaryFireMode = playerAbilityList[0].GetComponent<SpecialArrowShot>();
+        }
+        else
+        {
+            Debug.LogWarning("No Abilities in List found");
+        }
+    }
+
 
     private void Update()
     {
@@ -37,6 +60,15 @@ public class Bow : MonoBehaviour
 
         }
 
+        if (Input.GetButtonDown(secondaryFireButton))
+        {
+            if (timeBetweenShots < 0)
+            {
+                secondaryFireMode.Init(leftSpawnPoint, centerSpawnPoint, rightSpawnPoint);
+
+            }
+        }
+
         // Debug.Log(fireCooldown);
     }
 
@@ -44,9 +76,14 @@ public class Bow : MonoBehaviour
     {
         if (timeBetweenShots <= 0f)
         {
-           Instantiate(projectilePrefab, spawnPoint.position, spawnPoint.rotation);
-           timeBetweenShots = 0.5f;
+            Instantiate(projectilePrefab, centerSpawnPoint.position, centerSpawnPoint.rotation);
+            timeBetweenShots = 0.5f;
         }
+    }
+
+    private void FireSpecialShot()
+    {
+        
     }
 
     protected void AimToMousePos()
