@@ -33,7 +33,7 @@ public class StatusEffects : MonoBehaviour
                 case EnumStatusEffects.poisened:
                     if (currentStatusEffect == null)
                     {
-                        currentStatusEffect = StartCoroutine(PoisonDmg(statusEffectTime, 0.5f));
+                        currentStatusEffect = StartCoroutine(PoisonDmg(statusEffectTime, 1,3));
 
                     }
                     break;
@@ -59,11 +59,12 @@ public class StatusEffects : MonoBehaviour
         }
         currentStatusEffect = null;
     }
-    IEnumerator PoisonDmg(float posionTime,float delayBetweenPosionTicks)
+    IEnumerator PoisonDmg(float poisonTime,float delayBetweenPosionTicks,float poisonTicks)
     {
-        while(posionTime >= 0)
+        for (int i = 0; i < poisonTicks ; i++)
         {
-            stats.Health -= 2;
+            Debug.Log("WWWwWWW");
+            stats.Health -= 1;
             yield return new WaitForSeconds(delayBetweenPosionTicks);
         }
         currentStatusEffect = null;

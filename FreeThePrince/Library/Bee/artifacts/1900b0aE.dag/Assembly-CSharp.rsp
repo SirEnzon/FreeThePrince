@@ -349,6 +349,7 @@
 "Assets/Scripts/PlayerScripts/PlayerMovement.cs"
 "Assets/Scripts/PlayerScripts/SpecialPlayerStats.cs"
 "Assets/Scripts/Traps/FireTrap.cs"
+"Assets/Scripts/Traps/PoisonTrap.cs"
 "Assets/Scripts/Traps/SpikeTrap.cs"
 "Assets/Scripts/Traps/SpikeTrapDamage.cs"
 -langversion:8.0
