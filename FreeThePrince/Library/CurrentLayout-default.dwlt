@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 911, y: 442}
   m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 7080
+  controlID: 77
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 7081
+  controlID: 78
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -404,9 +404,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 257.39087, y: -63.70162, z: 48.21384}
+    m_Target: {x: 4.724286, y: -3.277472, z: -6.7557764}
     speed: 2
-    m_Value: {x: 257.39087, y: -63.70162, z: 48.21384}
+    m_Value: {x: 4.724286, y: -3.277472, z: -6.7557764}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -453,13 +453,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.21436895, y: -0.09386517, z: 0.024947848, w: 0.9704144}
+    m_Target: {x: 0.33823907, y: 0.08068451, z: -0.0281335, w: 0.93561435}
     speed: 2
-    m_Value: {x: 0.21624985, y: -0.0895919, z: 0.024151534, w: 0.9719187}
+    m_Value: {x: 0.34158552, y: 0.07931409, z: -0.027903203, w: 0.9360823}
   m_Size:
-    m_Target: 2.18459
+    m_Target: 60.34829
     speed: 2
-    m_Value: 2.18459
+    m_Value: 2.0615528
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1180,22 +1180,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/PlayerScripts
+    - Assets/Particles
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/PlayerScripts
+  - Assets/Particles
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\enzom\Desktop\FreeThePrinceGitClone\FreeThePrince\FreeThePrince
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a8910000
-    m_LastClickedID: 37288
-    m_ExpandedIDs: 000000002660000028600000386000004060000000ca9a3b
+    m_SelectedIDs: 6a5f0000
+    m_LastClickedID: 24426
+    m_ExpandedIDs: 00000000525f00006c5f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1223,7 +1223,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000266000004060000000ca9a3b
+    m_ExpandedIDs: 00000000525f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1345,23 +1345,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6ef4ffff
-      m_LastClickedID: -2962
-      m_ExpandedIDs: 7c34fdffe62ffeff9067ffffc268ffff66d4ffff6ef4fffffef9ffff48fbffff54fbffff8a580000ee5900008e5a0000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 54fbffff22550000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: RoomWithFadeIn (4)
-        m_OriginalName: RoomWithFadeIn (4)
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -2428
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 11}
       m_SearchString: 
