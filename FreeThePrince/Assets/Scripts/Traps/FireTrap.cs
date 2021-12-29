@@ -25,9 +25,7 @@ public class FireTrap : Trap
         trapFireParticles.Play();
         while (firePlayTime >= 0)
         {
-            Debug.Log("FIREIRSSSSSSPLAYING");
             firePlayTime -= Time.deltaTime;
-           
             yield return new WaitForEndOfFrame();
         }
         trapFireParticles.Stop();

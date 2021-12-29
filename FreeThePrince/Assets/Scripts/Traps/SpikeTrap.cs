@@ -15,30 +15,28 @@ public class SpikeTrap : Trap
         if (!trapIsActivated)
         {
             StartCoroutine(TrapBehaviour());
-        }
-       
+        } 
     }
 
     protected override IEnumerator TrapBehaviour()
     {
-        damageDelay = false;
+        Debug.Log("HDKSHKSHKSD");
         float timer = activationDelay;
         spikeDefaultPos = spikes.position;
-       
-        while(activationDelay >= 0)
+        trapIsActivated = true;
+        while(timer >= 0)
         {
             trapIsActivated = true;
-            activationDelay -= Time.deltaTime;
-            spikes.position = Vector3.Lerp(spikes.position, spikes.position + new Vector3(0,0.4f,0), Time.deltaTime );
+            timer -= Time.deltaTime;
+            spikes.position = Vector3.Lerp(spikes.position, transform.position + new Vector3(0,1f,0), Time.deltaTime );
             yield return new WaitForEndOfFrame();
         }
         trapIsActivated = false;
         spikes.position = spikeDefaultPos;
-        activationDelay = 2;
-
     }
     void  OnTriggerEnter(Collider other)
     {
+        Debug.Log("heyIamActivatedlol");
         OnActivation();
     }
     void OnTriggerExit(Collider other)

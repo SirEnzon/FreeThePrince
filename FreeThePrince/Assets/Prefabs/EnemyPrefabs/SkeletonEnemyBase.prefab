@@ -42,12 +42,13 @@ GameObject:
   - component: {fileID: 5511492793948958996}
   - component: {fileID: 3412800335347763760}
   - component: {fileID: 1684799019943998305}
+  - component: {fileID: -7201911637789473042}
   - component: {fileID: 8590850649142230203}
   - component: {fileID: 3975021754102647686}
   - component: {fileID: 5730081939279957001}
   - component: {fileID: 4223653188276430462}
   - component: {fileID: 3613543154695740745}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SkeletonEnemyBase
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -107,6 +108,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04f594a4f3f3aa5439f72a6296210696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7201911637789473042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8043445047138426666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b08195c4ca0e864191ab3670dbd3f91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!33 &8590850649142230203

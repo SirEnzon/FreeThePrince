@@ -19,7 +19,6 @@ public class PlayerUi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartRechargeStaminaBar();
         UpdateHealthBar();
         UpdateStaminaBar();
     }
@@ -35,17 +34,6 @@ public class PlayerUi : MonoBehaviour
     void UpdateStaminaBar()
     {     
             staminaBar.value = playerStats.Stamina;  
-    }
-    void StartRechargeStaminaBar()
-    {
-        Debug.Log("SKSKLSLKSKLAKSKLS");
-        staminaBar.value += 20f;
-        Debug.Log(staminaBar.value);
-    }
-    IEnumerator RechargeStaminaBar()
-    {
-       yield return null;
-        
     }
   
 }

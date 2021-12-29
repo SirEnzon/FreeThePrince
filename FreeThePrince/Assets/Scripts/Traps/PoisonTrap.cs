@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class PoisonTrap : Trap 
 {
+    [SerializeField] float poisonActivationRadius;
     [SerializeField] LayerMask triggerLayer;
     ParticleSystem poisonCloud;
     Coroutine poisonBurst;
+    bool poisonCloudIsPlaying = false;
 
-   
-
-    // Start is called before the first frame update
     void Start()
     {
         poisonCloud = GetComponentInChildren<ParticleSystem>();
@@ -21,7 +20,7 @@ public class PoisonTrap : Trap
     }
     protected override void OnActivation()
     {
-        if(poisonBurst == null)
+        if(poisonBurst == null && !poisonCloudIsPlaying)
         {
             poisonBurst = StartCoroutine(TrapBehaviour());
         }
@@ -29,16 +28,27 @@ public class PoisonTrap : Trap
 
     protected override IEnumerator TrapBehaviour()
     {
+        float poisonCloudPlayTime = 5;
+       
         poisonCloud.Play();
-        yield return new WaitForSeconds(1);
+        while(poisonCloudPlayTime >= 0)
+        {
+            poisonCloudIsPlaying = true;
+            poisonCloudPlayTime -= Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        poisonCloudPlayTime = 5;
+        poisonCloudIsPlaying = false;
         poisonBurst = null;
         poisonCloud.Stop();
     }
     void CheckForTriggerTargets()
     {
-        if (Physics.CheckSphere(gameObject.transform.position, 2, triggerLayer))
+        bool poisonCanBeActivated = Physics.CheckSphere(gameObject.transform.position, poisonActivationRadius, triggerLayer);
+        if( !poisonCloudIsPlaying && poisonCanBeActivated)
         {
-            OnActivation();
+            Debug.Log(poisonCloudIsPlaying);
+            OnActivation(); 
         }
     }
     private void OnParticleCollision(GameObject other)
@@ -46,7 +56,10 @@ public class PoisonTrap : Trap
         if(other.gameObject.GetComponent<IDamageAble>() != null)
         {
             other.gameObject.GetComponent<StatusEffects>().TriggerEffect(trapDmg, StatusEffects.EnumStatusEffects.poisened);
-            other.gameObject.GetComponent<IDamageAble>().TakeDmg(trapDmg);
         }
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, poisonActivationRadius);
     }
 }

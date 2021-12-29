@@ -11,6 +11,5 @@ public class BaseDeath : MonoBehaviour,IOnDie
     public void OnDeath()
     {
         gameObject.SetActive(false);
-        Debug.Log("HEYiamDead");
     }
 }

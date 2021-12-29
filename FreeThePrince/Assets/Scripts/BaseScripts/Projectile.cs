@@ -25,6 +25,7 @@ public class Projectile : MonoBehaviour
     private void Update()
     {
         transform.forward = rb.velocity;
+        transform.Rotate(Vector3.forward * 500 * Time.deltaTime);
     }
 
     public void Init()
@@ -38,7 +39,7 @@ public class Projectile : MonoBehaviour
         projectileForce = projectileStats.BaseSpeed;
         lifeSpan = projectileStats.BaseHealth;
     }
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag(targetTag))
         {
