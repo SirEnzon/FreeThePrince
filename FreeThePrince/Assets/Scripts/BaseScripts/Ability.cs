@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ability : MonoBehaviour
 {
-    [SerializeField] protected Projectile arrowPrefab;
+    [SerializeField] protected GameObject arrowPrefab;
     // [SerializeField] protected Transform spawnPoint;
     // // [SerializeField] protected string fireButton;
     // [SerializeField] protected float cooldown;

@@ -94,13 +94,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - EmissionStrength: 102.76
+    - EmissionStrength: 0
     - FogFluffiness: 0.34
-    - FogHeight: -12.6
+    - FogHeight: 0.01
     - FogSpeed: 10
-    - Intensity: 0.3
+    - Intensity: 0.1
     - NoiseScale: 0.1
-    - NoiseSpeed: 23.22
+    - NoiseSpeed: 6
     - NoiseSpeed2: 0
     - SmoothingValue: 1.96
     - SmoothingValue2: -1.26
@@ -132,8 +132,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - FogColor2: {r: 0.488252, g: 0.49056602, b: 0.48825207, a: 1}
+    - FogColor: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 1}
+    - FogColor2: {r: 0.5566038, g: 0.54347634, b: 0.54347634, a: 1}
     - FresnellColor: {r: 1, g: 0.06132078, b: 0.06132078, a: 0}
     - RotateProjection: {r: 1, g: 0, b: 0, a: 100}
     - Shape: {r: -1.19, g: 10.6, b: -0.94, a: 12.04}

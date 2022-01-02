@@ -8,7 +8,6 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] protected Stats projectileStats;
     [SerializeField] protected string targetTag;
-    protected float lifeSpan = 2f;
     protected float projectileDmg;
     protected float projectileForce;
     protected Rigidbody rb;
@@ -24,20 +23,17 @@ public class Projectile : MonoBehaviour
     }
     private void Update()
     {
-        transform.forward = rb.velocity;
-        transform.Rotate(Vector3.forward * 500 * Time.deltaTime);
+        //transform.forward = rb.velocity;
     }
 
     public void Init()
     {
         rb.AddForce(transform.forward  * projectileForce, ForceMode.Impulse);
-        Destroy(gameObject, lifeSpan);
     }
     protected void SetProjectileStats()
     {
         projectileDmg = projectileStats.BaseDmg;
         projectileForce = projectileStats.BaseSpeed;
-        lifeSpan = projectileStats.BaseHealth;
     }
     protected virtual void OnTriggerEnter(Collider other)
     {
@@ -45,7 +41,13 @@ public class Projectile : MonoBehaviour
         {
             other.gameObject.GetComponent<IDamageAble>().TakeDmg(projectileDmg);
             Destroy(gameObject);
+            //gameObject.SetActive(false);
+            //SpawnManager.instance.arrowProjectiles.Release(gameObject);
         }
-
+        else if (other.gameObject.CompareTag("WallsProps"))
+        {
+            //SpawnManager.instance.arrowProjectiles.Release(gameObject);
+            Destroy(gameObject);
+        }
     }
 }

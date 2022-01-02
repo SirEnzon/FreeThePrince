@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lever : MonoBehaviour,IInteractable
+public class Lever : InteractableObject
 {
     GameObject[] firstRoomDoors;
     
-    public void OnInteraction()
+    public override void OnInteraction()
     {
         if(firstRoomDoors == null)
         {

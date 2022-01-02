@@ -6,7 +6,10 @@ public class Dash : MonoBehaviour
 {
     [SerializeField] Transform playerTransform;
     [SerializeField] float dashForce;
-    [SerializeField] float dashCD;
+    static float dashCD;
+    static public float DashCd { get { return dashCD; } }
+    static bool dashIsAvailable;
+    static public bool DashIsAvailable { get { return dashIsAvailable; } }
     static bool isDashing;
     static public bool IsDashing { get { return isDashing; } set { isDashing = value;} }
 
@@ -24,33 +27,50 @@ public class Dash : MonoBehaviour
     void Update()
     {
         PlayerDash();
+        MakeDashAvailableAgain();
     }
     void PlayerDash()
     {
-        dashCD -= Time.deltaTime;
+       
         if (Input.GetKeyDown(KeyCode.LeftShift) && dashCD <= 0 && playerStats.Stamina >= 10)
         {
             playerStats.Stamina -= 10;
             StartCoroutine(DashInvincibility(1));
-            dashCD = 1;
-            playerRb.AddForce(playerTransform.forward * dashForce, ForceMode.Impulse);
+            
+            
         }
-        else
+        else if(!isDashing)
         {
+            dashCD -= Time.deltaTime;
             playerStats.Stamina += 0.01f;
         }
     }
     IEnumerator DashInvincibility(float dashInvincibility)
     {
+        dashCD = 4;
+        
         while(dashInvincibility >= 0)
         {
+            dashIsAvailable = false;
+            isDashing = true;
+            playerRb.AddForce(playerTransform.forward * dashForce);
             dashInvincibility -= Time.deltaTime;
             GetComponent<BaseStats>().IsInvincible = true;
             yield return new WaitForEndOfFrame();
+
         }
+        isDashing = false;
+        dashCD = 1;
+        playerRb.velocity = Vector3.zero;
+        playerRb.angularVelocity = Vector3.zero;
         dashInvincibility = 1;
         GetComponent<BaseStats>().IsInvincible = false;
-        Debug.Log(GetComponent<BaseStats>().IsInvincible);
-
+    }
+    void MakeDashAvailableAgain()
+    {
+        if(playerStats.Stamina > 10 && !isDashing)
+        {
+            dashIsAvailable = true;
+        }
     }
 }

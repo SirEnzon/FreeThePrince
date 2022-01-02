@@ -19,7 +19,7 @@ public class RangedEnemy : BaseEnemyAi
         if(attackCd <= 0 )
         {
             GameObject go = enemyProjectile;
-            SpawnManager.instance.SpawnProjectiles(1f, 1, go, spawnPosition);
+            //SpawnManager.instance.SpawnProjectiles(1f, 1, go, spawnPosition);
             go.transform.forward = spawnPosition.forward;
             attackCd = 2;
         }

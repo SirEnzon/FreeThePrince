@@ -14,7 +14,7 @@ public class DoorWithRoomFadeIn : MonoBehaviour
     {
         roomToFadeInRenderer = roomToFadeIn.GetComponent<Renderer>();
     }
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && fadeStarted)
         {

@@ -5,12 +5,14 @@ using UnityEngine.AI;
 
 public class BaseEnemyAi : MonoBehaviour
 {
+    [SerializeField] protected Animator enemyAnimations;
     [SerializeField] protected Transform enemyTransform;
     [SerializeField] protected Transform playerTransform;
     [SerializeField] protected Transform enemyAttackCheck;
     [SerializeField] protected NavMeshAgent enemyAgent;
     [SerializeField] protected LayerMask playerLayer;
     [SerializeField] protected LayerMask groundLayer;
+    [SerializeField] protected LayerMask wallLayer;
     [SerializeField] protected float sightRange;
     [SerializeField] protected float attackRange;
     [SerializeField] protected float walkingRange;
@@ -26,11 +28,16 @@ public class BaseEnemyAi : MonoBehaviour
     protected float randomX;
     protected float randomZ;
 
-    // Update is called once per frame
+    protected void Start()
+    {
+        enemyAgent.speed = GetComponent<BaseStats>().Speed;
+    }
     protected virtual void Update()
     {
+       
         if (!hasBeenAttacked)
-        { 
+        {
+            CheckForWall();
             CheckIfHasToPatroll();
         }
         CheckForPlayerInSightRange();
@@ -45,8 +52,7 @@ public class BaseEnemyAi : MonoBehaviour
         float randomZ = Random.Range(-walkingRange, walkingRange);
         float randomX = Random.Range(-walkingRange, walkingRange);
         enemyWalkPoint = enemyTransform.position + new Vector3(randomX, 0, randomZ);
-        Debug.DrawRay(transform.position, Vector3.down, Color.blue);
-        if (Physics.Raycast( enemyWalkPoint, -enemyTransform.up, 1f, groundLayer))
+        if (Physics.Raycast( enemyWalkPoint, -enemyTransform.up , 50f, groundLayer))
         {
             walkPointSet = true;
         }
@@ -55,17 +61,20 @@ public class BaseEnemyAi : MonoBehaviour
     }
     protected void Patrolling()
     {
+        Debug.DrawRay(transform.position, transform.forward *7f, Color.green);
         Debug.DrawRay(enemyWalkPoint, Vector3.down, Color.blue);
         if (!walkPointSet) SearchWayPoint();
         if (walkPointSet)
         {
+            enemyAnimations.SetBool("isWalking", true);
             enemyAgent.SetDestination(enemyWalkPoint);
         }
         distanceToWalkPoint =  enemyWalkPoint - enemyTransform.position;
 
         if (distanceToWalkPoint.magnitude <= 1f)
         {
-            walkPointSet = false;
+            enemyAnimations.SetBool("isWalking", false);
+           walkPointSet = false;
         }
     }
 
@@ -78,15 +87,24 @@ public class BaseEnemyAi : MonoBehaviour
         playerIsInSightRange = Physics.CheckSphere(enemyTransform.position, sightRange, playerLayer);
     }
     protected void ChasePlayer()
-    {
-        enemyAgent.SetDestination(playerTransform.position);
+    { 
+        Debug.DrawRay(enemyTransform.position , playerTransform.position - enemyTransform.position, Color.green);
+        if (!Physics.Raycast(enemyTransform.position,playerTransform.position - enemyTransform.position, 10f, wallLayer))
+        {
+            
+            enemyAgent.SetDestination(playerTransform.position);
+            enemyAnimations.SetBool("isWalking", true);
+        }
+       
     }
     protected virtual void EnemyAttack()
     {
-        if (canAttack)
+        if (canAttack && playerIsInAttackRange)
         {
+            enemyAnimations.SetTrigger("isAttacking");
+            enemyAnimations.SetBool("isStillAttacking", true);
             StartCoroutine(AttackDelay(attackCd));
-            Collider[] attackableTargets = Physics.OverlapSphere(enemyAttackCheck.position, attackcheckRadius, playerLayer);
+            Collider[] attackableTargets = Physics.OverlapSphere(enemyAttackCheck.position, attackcheckRadius, playerLayer);         
             foreach (Collider attackableTarget in attackableTargets)
             {
                 attackableTarget.gameObject.GetComponent<IDamageAble>().TakeDmg(GetComponent<BaseStats>().Dmg);
@@ -114,10 +132,24 @@ public class BaseEnemyAi : MonoBehaviour
             ChasePlayer();
         }
     }
+    protected void CheckForWall()
+    {
+        if (Physics.CheckSphere(transform.position, 3f,  wallLayer))
+        {
+            SearchWayPoint();
+        }
+    }
     protected virtual IEnumerator AttackDelay(float attackCd)
     {
+        enemyAgent.speed = 0;
         canAttack = false;
         yield return new WaitForSeconds(attackCd);
+        enemyAnimations.ResetTrigger("isAttacking");
+        if (!playerIsInAttackRange)
+        {
+            enemyAnimations.SetBool("isStillAttacking", false);
+        }
+        enemyAgent.speed = GetComponent<BaseStats>().Speed;
         canAttack = true;
     }
     protected void OnDrawGizmosSelected()

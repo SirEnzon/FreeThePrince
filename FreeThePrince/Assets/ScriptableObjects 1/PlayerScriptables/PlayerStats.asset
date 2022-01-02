@@ -15,4 +15,4 @@ MonoBehaviour:
   baseHealth: 10
   baseDmg: 5
   baseArmor: 0
-  baseSpeed: 6
+  baseSpeed: 30

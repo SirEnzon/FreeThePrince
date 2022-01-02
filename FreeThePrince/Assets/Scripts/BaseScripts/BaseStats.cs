@@ -16,13 +16,16 @@ public class BaseStats : MonoBehaviour,IDamageAble
     static bool thisIsDead;
     static public bool ThisIsDead { get { return thisIsDead; } set { thisIsDead = value; } }
     float baseArmor;
+    float maxHealth;
     // Start is called before the first frame update
     protected virtual  void Awake()
     {
+        maxHealth = stats.BaseHealth;
         SetStats();
     }
     protected virtual void Update()
     {
+        ClampHealth();
         CheckIfThisIsDead();
     }
     protected void SetStats()
@@ -32,6 +35,10 @@ public class BaseStats : MonoBehaviour,IDamageAble
         dmg = stats.BaseDmg;
         baseArmor = stats.BaseArmor;
 
+    }
+    void ClampHealth()
+    {
+        health = Mathf.Clamp(health, 0, maxHealth);
     }
     public void TakeDmg( float otherDmg)
     {
@@ -43,7 +50,7 @@ public class BaseStats : MonoBehaviour,IDamageAble
     }
     void CheckIfThisIsDead()
     {
-        if(health < 0)
+        if(health <= 0)
         {
             GetComponent<IOnDie>().OnDeath();
         }

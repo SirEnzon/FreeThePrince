@@ -7,7 +7,7 @@ public class SawTrap : Trap
     [SerializeField] Transform sawWheel;
     [SerializeField] Vector3 movementDirection;
     [SerializeField] float sawWheelMoveRange;
-     float sawWheelSpeed = 10;
+    [SerializeField] float sawWheelSpeed = 10;
      float sawWheelRotationSpeed = 500;
 
     private void Start()
