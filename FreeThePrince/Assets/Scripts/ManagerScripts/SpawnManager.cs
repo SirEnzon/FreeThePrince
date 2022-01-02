@@ -34,14 +34,18 @@ public class SpawnManager : MonoBehaviour
     //{
     //   projectile.gameObject.SetActive(false);
     //}
-    //public IEnumerator SpawnNumberOfProjectiles(float delayBetweenShots, float numberOfProjectiles, GameObject projectile,Transform spawnPos)
-    //{
-    //    for (int i = 0; i < numberOfProjectiles; i++)
-    //    {
-    //        Instantiate(projectile, spawnPos.position, spawnPos.rotation);
-    //        yield return new WaitForSeconds(delayBetweenShots);
-    //    }
-    //}
+    public void SpawnProjectiles(float delayBetweenShots, float numberOfProjectiles, GameObject projectile, Transform spawnPos)
+    {
+        StartCoroutine(SpawnNumberOfProjectiles(delayBetweenShots, numberOfProjectiles, projectile, spawnPos));
+    }
+    public IEnumerator SpawnNumberOfProjectiles(float delayBetweenShots, float numberOfProjectiles, GameObject projectile, Transform spawnPos)
+    {
+        for (int i = 0; i < numberOfProjectiles; i++)
+        {
+            Instantiate(projectile, spawnPos.position, spawnPos.rotation);
+            yield return new WaitForSeconds(delayBetweenShots);
+        }
+    }
     public void SpawnParticles(ParticleSystem particlesToSpawn,Transform spawnPosition, float destuctionTime)
     {
         Instantiate(particlesToSpawn, spawnPosition.position, spawnPosition.rotation);

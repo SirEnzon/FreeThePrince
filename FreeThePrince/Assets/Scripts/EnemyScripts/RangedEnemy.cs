@@ -17,9 +17,10 @@ public class RangedEnemy : BaseEnemyAi
     {
         attackCd -= Time.deltaTime;
         if(attackCd <= 0 )
-        {
+        { 
+           
             GameObject go = enemyProjectile;
-            //SpawnManager.instance.SpawnProjectiles(1f, 1, go, spawnPosition);
+            SpawnManager.instance.SpawnProjectiles(1f, 1, go, spawnPosition);
             go.transform.forward = spawnPosition.forward;
             attackCd = 2;
         }
@@ -29,9 +30,14 @@ public class RangedEnemy : BaseEnemyAi
     {
         if (playerIsInAttackRange && playerIsInSightRange)
         {
+            enemyAnimations.SetBool("IsAttacking", true);
             enemyTransform.LookAt(playerTransform.position);
             this.EnemyAttack();
-        }  
+        }
+        else
+        {
+            enemyAnimations.SetBool("IsAttacking", false);
+        }
     }
     
     
