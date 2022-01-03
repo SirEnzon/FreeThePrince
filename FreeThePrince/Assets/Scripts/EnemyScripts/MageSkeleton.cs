@@ -6,20 +6,13 @@ using UnityEngine;
 public class MageSkeleton :BaseEnemyAi
 {
     ParticleSystem fireSpell;
-    bool spellIsPlaying = false;
-    float spellDmg;
-
     private void Awake()
     {
         
         fireSpell = GetComponentInChildren<ParticleSystem>();
         
     }
-    private void Start()
-    {
-        SetSpellStats();
-    }
-    private void Update()
+    protected override void Update()
     {
         if (playerIsInAttackRange)
         {
@@ -27,14 +20,17 @@ public class MageSkeleton :BaseEnemyAi
         }
         base.Update();
     }
-    protected override void EnemyAttack()
+    public override void EnemyAttack()
     {
        
-        if (!fireSpell.isPlaying)
+        if (!fireSpell.isPlaying )
         {
-            fireSpell.Play();
-            StartCoroutine(AttackDelay(attackCd));   
+            enemyAnimations.SetBool("isAttacking", true);
+            fireSpell.Play();  
         }
+       
+           
+        
        
     }
     protected override void CheckIfCanattack()
@@ -45,22 +41,9 @@ public class MageSkeleton :BaseEnemyAi
         }
         else if (!playerIsInAttackRange)
         {
+            enemyAnimations.SetBool("isAttacking", false);
             fireSpell.Stop();
         }
 
-    }
-    void SetSpellStats()
-    {  
-        spellDmg = GetComponentInParent<BaseStats>().Dmg;
-    }
-    protected override IEnumerator AttackDelay(float attackCd)
-    {
-        while(attackCd >= 0)
-        {
-            attackCd -= Time.deltaTime;
-            spellIsPlaying = true;
-            yield return new WaitForEndOfFrame();
-        }
-        spellIsPlaying = false;
     }
 }

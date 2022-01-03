@@ -18,6 +18,7 @@ public class BaseEnemyAi : MonoBehaviour
     [SerializeField] protected float walkingRange;
     [SerializeField] protected float attackcheckRadius;
     [SerializeField] protected float attackCd;
+    [SerializeField] float attackSpeed;
     protected Vector3 enemyWalkPoint;
     protected Vector3 distanceToWalkPoint;
     protected bool playerIsInAttackRange;
@@ -97,12 +98,12 @@ public class BaseEnemyAi : MonoBehaviour
         }
        
     }
-    protected virtual void EnemyAttack()
+    public  virtual void EnemyAttack()
     {
         if (canAttack && playerIsInAttackRange)
         {
-            enemyAnimations.SetTrigger("isAttacking");
-            enemyAnimations.SetBool("isStillAttacking", true);
+            transform.LookAt(playerTransform.position);
+            RegulateAnimation();
             StartCoroutine(AttackDelay(attackCd));
             Collider[] attackableTargets = Physics.OverlapSphere(enemyAttackCheck.position, attackcheckRadius, playerLayer);         
             foreach (Collider attackableTarget in attackableTargets)
@@ -120,7 +121,7 @@ public class BaseEnemyAi : MonoBehaviour
     }
     protected virtual void CheckIfCanattack()
     {
-        if (playerIsInAttackRange && playerIsInSightRange)
+        if (playerIsInAttackRange && playerIsInSightRange && canAttack)
         {
             EnemyAttack();
         }
@@ -152,6 +153,12 @@ public class BaseEnemyAi : MonoBehaviour
         enemyAgent.speed = GetComponent<BaseStats>().Speed;
         canAttack = true;
     }
+    void RegulateAnimation()
+    {
+        enemyAnimations.speed = attackSpeed / attackCd;
+        enemyAnimations.SetTrigger("isAttacking");
+        enemyAnimations.SetBool("isStillAttacking", true);
+    }
     protected void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(enemyAttackCheck.position, attackcheckRadius);
@@ -163,7 +170,6 @@ public class BaseEnemyAi : MonoBehaviour
         if (other.gameObject.CompareTag("PlayerProjectile"))
         {
             hasBeenAttacked = true;
-            Debug.Log(hasBeenAttacked);
         }
     }
 

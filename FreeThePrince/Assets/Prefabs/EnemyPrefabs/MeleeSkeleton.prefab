@@ -127,10 +127,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   sightRange: 1
-  attackRange: 2
+  attackRange: 5.88
   walkingRange: 12
-  attackcheckRadius: 1
+  attackcheckRadius: 0
   attackCd: 1.2
+  attackSpeed: 1
 --- !u!114 &6961436167845805138
 MonoBehaviour:
   m_ObjectHideFlags: 0

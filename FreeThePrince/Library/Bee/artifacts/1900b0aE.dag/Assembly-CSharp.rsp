@@ -325,6 +325,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Animations/AnimatorStateScripts/BowSkeletonAttack.cs"
 "Assets/ScriptableObjects/Stats.cs"
 "Assets/Scripts/AbilitiesScripts/SpecialArrowShot.cs"
 "Assets/Scripts/BaseScripts/Ability.cs"

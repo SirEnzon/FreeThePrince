@@ -28,10 +28,6 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position += movement.normalized * GetComponent<BaseStats>().Speed * Time.deltaTime;
         }
-        else
-        {
-            playerRb.velocity = Vector3.zero;
-        }
         Debug.DrawRay(transform.position,transform.forward * 2,Color.black);
       
         if (movement != Vector3.zero && !Input.GetMouseButton(0))

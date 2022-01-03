@@ -14,13 +14,11 @@ public class Dash : MonoBehaviour
     static public bool IsDashing { get { return isDashing; } set { isDashing = value;} }
 
     SpecialPlayerStats playerStats;
-    Rigidbody playerRb;
 
     // Start is called before the first frame update
     void Start()
     {
         playerStats = GetComponent<SpecialPlayerStats>();
-        playerRb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -47,13 +45,12 @@ public class Dash : MonoBehaviour
     }
     IEnumerator DashInvincibility(float dashInvincibility)
     {
-        dashCD = 4;
         
         while(dashInvincibility >= 0)
         {
             dashIsAvailable = false;
             isDashing = true;
-            playerRb.AddForce(playerTransform.forward * dashForce);
+            playerTransform.position += transform.forward * dashForce * Time.deltaTime;
             dashInvincibility -= Time.deltaTime;
             GetComponent<BaseStats>().IsInvincible = true;
             yield return new WaitForEndOfFrame();
@@ -61,8 +58,6 @@ public class Dash : MonoBehaviour
         }
         isDashing = false;
         dashCD = 1;
-        playerRb.velocity = Vector3.zero;
-        playerRb.angularVelocity = Vector3.zero;
         dashInvincibility = 1;
         GetComponent<BaseStats>().IsInvincible = false;
     }

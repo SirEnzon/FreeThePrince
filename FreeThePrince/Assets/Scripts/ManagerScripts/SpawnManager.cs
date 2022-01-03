@@ -38,11 +38,11 @@ public class SpawnManager : MonoBehaviour
     {
         StartCoroutine(SpawnNumberOfProjectiles(delayBetweenShots, numberOfProjectiles, projectile, spawnPos));
     }
-    public IEnumerator SpawnNumberOfProjectiles(float delayBetweenShots, float numberOfProjectiles, GameObject projectile, Transform spawnPos)
+    public IEnumerator SpawnNumberOfProjectiles(float delayBetweenShots, float numberOfProjectiles, GameObject projectile,Transform spawnPos)
     {
         for (int i = 0; i < numberOfProjectiles; i++)
         {
-            Instantiate(projectile, spawnPos.position, spawnPos.rotation);
+            Instantiate(projectile, spawnPos.position,spawnPos.rotation);
             yield return new WaitForSeconds(delayBetweenShots);
         }
     }

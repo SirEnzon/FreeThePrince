@@ -1816,7 +1816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 738ea054a0309eb49abaec6790eb12c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyAnimations: {fileID: 0}
+  enemyAnimations: {fileID: 2964570974874502193}
   enemyTransform: {fileID: 7171193320636652041}
   playerTransform: {fileID: 0}
   enemyAttackCheck: {fileID: 7171193320636652041}
@@ -1829,7 +1829,7 @@ MonoBehaviour:
     m_Bits: 64
   wallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   sightRange: 7
   attackRange: 7
   walkingRange: 4
@@ -1837,6 +1837,7 @@ MonoBehaviour:
   attackCd: 2
   enemyProjectile: {fileID: 5479454260475107019, guid: a47d9b22dba95404f8c2f4dabcc43d98, type: 3}
   spawnPosition: {fileID: 7171193321495600371}
+  attacksPerSecond: 3
 --- !u!114 &-6687364356596727510
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class RangedEnemy : BaseEnemyAi
 {
     [SerializeField] GameObject enemyProjectile;
     [SerializeField] Transform spawnPosition;
+    [SerializeField] float attacksPerSecond;
     // Start is called before the first frame update
     protected override void Update()
     {
@@ -13,18 +14,9 @@ public class RangedEnemy : BaseEnemyAi
         CheckIfCanattack();
 
     }
-    protected override void EnemyAttack()
+    public override void EnemyAttack()
     {
-        attackCd -= Time.deltaTime;
-        if(attackCd <= 0 )
-        { 
-           
-            GameObject go = enemyProjectile;
-            SpawnManager.instance.SpawnProjectiles(1f, 1, go, spawnPosition);
-            go.transform.forward = spawnPosition.forward;
-            attackCd = 2;
-        }
-        
+        enemyAnimations.speed = attacksPerSecond / attackCd;
     }
     protected override void CheckIfCanattack()
     {
